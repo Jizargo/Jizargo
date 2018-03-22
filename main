@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="gb2312"?> 
+<?xml-stylesheet type="text/xsl" href="001.xsl"?> 
+<cookbook> 
+<menu> 
+<type>鲁菜</type> 
+<cai> 
+<dish> 
+<name>拔丝金枣</name> 
+<price>450</price> 
+</dish> 
+<dish> 
+<name>八仙过海闹罗汉</name> 
+<price>80</price> 
+</dish> 
+<dish> 
+<name>清汤柳叶燕菜</name> 
+<price>150</price> 
+</dish> 
+</cai> 
+</menu> 
+<menu> 
+<type>chuan菜</type> 
+<cai> 
+<dish> 
+<name>拔sdf金枣</name> 
+<price>450</price> 
+</dish> 
+<dish> 
+<name>八仙过海闹罗汉</name> 
+<price>80</price> 
+</dish> 
+<dish> 
+<name>清汤柳叶燕菜</name> 
+<price>150</price> 
+</dish> 
+</cai> 
+</menu> 
+</cookbook> 
+#下面是001.xsl的内容 
+<?xml version="1.0" encoding="gb2312"?> 
+<html xmlns:xsl="http://www.w3.org/TR/WD-xsl"> 
+<head> 
+<title>菜单</title> 
+</head><body> 
+<xsl:for-each select="cookbook/menu"> 
+<table border="1" cellspacing="0"> 
+<caption style="font-size: 150%; font-weight: bold"> 
+<xsl:value-of select="type"/> 
+</caption> 
+<xsl:for-each select="cai/dish"> 
+<tr> 
+<th>菜名</th><td><xsl:value-of select="name"/></td> 
+<th>价格</th><td><xsl:value-of select="price"/></td> 
+</tr> 
+</xsl:for-each> 
+</table> 
+</xsl:for-each> 
+</body> 
+</html> 
